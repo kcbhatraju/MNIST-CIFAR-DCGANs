@@ -49,14 +49,14 @@ def plot_image_grid(images, ncols=None, cmap='gray'):
             ax.imshow(img, cmap=cmap)
     plt.show()
 
-
+# very sensitive to these values
 lr = 3e-4
 z_dim = 64
 image_dim = 28*28
 batch_size = 32
 num_epochs = 100
 
-# very sensitive to these values
+
 disc = Discriminator(image_dim)
 gen = Generator(z_dim, image_dim)
 fixed_noise = torch.randn((batch_size, z_dim))
